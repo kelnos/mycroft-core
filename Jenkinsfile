@@ -12,6 +12,7 @@ pipeline {
         stage('Run Integration Tests') {
             when {
                 anyOf {
+                    branch 'test/email-results'
                     branch 'dev'
                     branch 'master'
                     changeRequest target: 'dev'
